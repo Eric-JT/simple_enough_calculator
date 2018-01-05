@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+:root {
+  --body-bg-color:#e1e2e1;
+  --calc-theme: #00e676;
+  --calc-theme-accent: #212121;
+  --calc-theme-bg: #97e6ff;
+  --calc-theme-border: #1985c1;
+  --calc-results-bg: #f5f5f6;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.wrapper {
+  border: var( --calc-theme-border ) 1px dotted;
+}
+
+li {
+  list-style: none;
+}
+
+ul {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-content: center;
+  height: 100%;
+  width: 100%;
+}
+
+.btn {
+  border: 2px solid var( --calc-theme-accent );
+  color: var( --calc-theme-accent );
+  background: var( --calc-theme );
+  padding: 10px;
+  text-align: center;
+  transition: .25s all linear;
+  transform: scale( .9, .9 );
+  height: 80px;
+  width: 80px;
+  cursor: pointer;
+}
+
+.btn:focus,
+.btn:hover {
+  background-color: var( --calc-theme-accent );
+  color: var( --calc-theme );
+  transform: scale( 1.1, 1.1 ) translate( 0, -2px );
+  border: 2px solid var( --calc-theme );
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  width: 100vw;
+  height: 100vh;
+  background: var( --body-bg-color );
+}
+
+main {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.app {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-areas: 
+    "calc-header calc-header"
+    "calc-main calc-sidebar";
+  height: 50%;
+  max-height: 600px;
+  width: 50%;
+  max-width: 600px;
+  min-width: 300px;
+  background: var( --calc-theme-bg );
+  border: var( --calc-theme-border ) 1px solid;
+  margin: 10px;
+  box-shadow: 13px 14px 58px rgba(32, 22, 22, 0.64), 0px 3px 12px rgba(0, 0, 0, 0.94);
+  transition: .25s all linear;
+}
+
+.app:hover,
+.app:focus {
+  transform: scale( 1.1, 1.1 ) translate( 0, 20px );
+}
+
+.results {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-area: calc-header;
+  background: var( --calc-results-bg );
+  color: var( --calc-theme-accent );
+}
+
+.results > p {
+  height: max-content;
+  width: max-content;
+}
+
+.numbers {
+  grid-area: calc-main;
+}
+
+.operators {
+  grid-area: calc-sidebar;
+}
+
+
+
